@@ -1,12 +1,32 @@
 {
-  "parser": "@typescript-eslint/parser",
-  "plugins": ["@typescript-eslint"],
-  "extends": ["eslint:recommended"],
-  "parserOptions": {
-    "ecmaVersion": 9,
-    "sourceType": "module",
-    "project": "tsconfig.json"
+  "plugins": [
+    "import",
+    "import/typescript",
+    "import/errors",
+    "import/warnings"
+  ],
+  "settings": {
+    "import/parsers": {
+      "@typescript-eslint/parser": [
+        ".ts",
+        ".tsx"
+      ]
+    },
+    "import/resolver": {
+      "typescript": {
+        "alwaysTryTypes": true, // always try to resolve types under `<root>@types` directory even it doesn't contain any source code, like `@types/unist`
+        // Multiple tsconfigs (Useful for monorepos)
+        // use a glob pattern
+        "project": "**/*/tsconfig.json"
+      }
+    }
   },
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "extends": [
+    "eslint:recommended"
+  ],
   "env": {
     "shared-node-browser": true,
     "node": true,
@@ -18,6 +38,7 @@
     "no-unused-vars": "off",
     "no-undef": "off",
     "no-redeclare": "off",
-    "prefer-const": "off"
+    "prefer-const": "off",
+    "import/no-unresolved": "error"
   }
 }

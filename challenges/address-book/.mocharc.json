@@ -1,0 +1,13 @@
+{
+    "require": [
+        "ts-node/register",
+        "source-map-support/register"
+    ],
+    "timeout": 60000,
+    "extension": [
+        "js",
+        "ts",
+        "json"
+    ],
+    "spec": "test/**/*.test.ts"
+}

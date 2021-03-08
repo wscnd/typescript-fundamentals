@@ -53,12 +53,12 @@ class OtherContact implements HasEmail, HasPhoneNumber {
         this.age = 35
         // () password must either be initialized like this, or have a default value
     }
-    private get passwordGet(): string {
-        if (!this.passwordVal) {
-            this.passwordVal = Math.round(Math.random() * 1e14).toString(32)
-        }
-        return this.passwordVal;
-    }
+    // private get passwordGet(): string {
+    //     if (!this.passwordVal) {
+    //         this.passwordVal = Math.round(Math.random() * 1e14).toString(32)
+    //     }
+    //     return this.passwordVal;
+    // }
 
 }
 

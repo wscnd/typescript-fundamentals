@@ -1,7 +1,10 @@
 {
   "compilerOptions": {
     "allowJs": true,
-    "checkJs": true
+    "checkJs": true,
+    "outDir": "lib",
   },
-  "include": ["src"]
+  "include": [
+    "src"
+  ]
 }

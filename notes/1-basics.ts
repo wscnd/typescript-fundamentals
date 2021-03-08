@@ -13,7 +13,7 @@ x = "hello mars";
 /**
  * (3) but if we try to change type
  */
-x = 42; // 🚨 ERROR
+// x = 42; // 🚨 ERROR
 
 /**
  * (4) let's look at const. The type is literally 'hello world'
@@ -45,7 +45,7 @@ z = "abc"; // (6) oh no! This isn't good
  */
 let zz: number;
 zz = 41;
-zz = "abc"; // 🚨 ERROR Type '"abc"' is not assignable to type 'number'.
+// zz = "abc"; // 🚨 ERROR Type '"abc"' is not assignable to type 'number'.
 
 //== SIMPLE ARRAYS ==//
 
@@ -55,7 +55,7 @@ zz = "abc"; // 🚨 ERROR Type '"abc"' is not assignable to type 'number'.
 let aa: number[] = [];
 
 aa.push(33);
-aa.push("abc"); // 🚨 ERROR: Argument of type '"abc"' is not assignable to parameter of type 'number'.
+// aa.push("abc"); // 🚨 ERROR: Argument of type '"abc"' is not assignable to parameter of type 'number'.
 
 /**
  * (9) we can even define a tuple, which has a fixed length
@@ -67,7 +67,7 @@ let bb: [number, string, string, number] = [
     10110
 ];
 
-bb = [1, 2, 3]; // 🚨 ERROR: Type 'number' is not assignable to type 'string'.
+// bb = [1, 2, 3]; // 🚨 ERROR: Type 'number' is not assignable to type 'string'.
 
 /**
  * (10) Tuple values often require type annotations (  : [number, number] )
@@ -86,9 +86,9 @@ cc = {
     houseNumber: 123
 };
 
-cc = {
-    houseNumber: 33
-};
+// cc = {
+//     houseNumber: 33
+// };
 /**
  * 🚨 Property 'streetName'
  * 🚨   is missing in type   '{ houseNumber: number; }'
