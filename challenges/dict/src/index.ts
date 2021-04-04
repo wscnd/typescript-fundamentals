@@ -25,4 +25,18 @@ mapDict({
 }, str => ({ val: str }));
 
 // Array.prototype.reduce, but for Dict
-export function reduceDict<T>(dict: Dict<T>) { }
+export function reduceDict<T, S>(
+    dict: Dict<T>,
+    reducer: (acc: S, curValue: T, idx: number) => S,
+    initialValue: S
+) {
+    let accumulator: S = initialValue;
+    Object.keys(dict).forEach((dictElm, idx) => {
+        const key = dict[dictElm];
+
+        if (typeof key !== 'undefined') {
+            accumulator = reducer(accumulator, key, idx);
+        }
+    });
+    return accumulator;
+}
