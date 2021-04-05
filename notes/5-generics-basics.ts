@@ -68,12 +68,14 @@ function resolveOrTimeout<T>(promise: Promise<T>, timeout: number): Promise<T> {
 }
 
 resolveOrTimeout(fetch(""), 3000);
+resolveOrTimeout(Promise.resolve(3), 3000);
+resolveOrTimeout(Promise.resolve('dfsadf'), 3000);
 
 /**
  * (4) Type parameters can have constraints
  */
-function arrayToDict<T extends { id: string }>(array: T[]): { [k: string]: T } {
-    const out: { [k: string]: T } = {};
+function arrayToDict<T extends { id: string; }>(array: T[]): { [k: string]: T; } {
+    const out: { [k: string]: T; } = {};
     array.forEach(val => {
         out[val.id] = val;
     });
